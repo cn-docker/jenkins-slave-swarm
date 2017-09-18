@@ -1,15 +1,16 @@
 # Jenkins Slave #
 
 Jenkins Slaves are build from an Ubuntu Xenial base and have this tools by default:  
-- Java JDK 8 update 121
-- Maven 3.3.9
-- Ant 1.10.1
-- Python 2.7.12
-- Python PIP 8.1.2
+- Java JDK 8 update 141  
+- Gradle 4.1  
+- Maven 3.5.0  
+- Ant 1.10.1  
+- Python 2.7.14  
+- Python PIP 8.1.2  
 
 You can build the Docker Image with the following command:  
 
-    docker build -t jenkins-slave jenkins-slave/
+    docker build -t jenkins-swarm-slave .
 
 The slave will be labeled "ubuntu-slave".
 
@@ -26,4 +27,4 @@ Build the Docker Image
 
 Run the Jenkins Slave, you need to provide Jenkins Master URL and the number of executors this slave should have.  
 
-    docker run -d --restart=always -v ~/jenkins_slave_data:/home/jenkins-slave/workspace jenkins-slave -master http://${JENKINS_MASTER_ADDRESS}:8080 -executors <NUMBER_OF_EXECUTORS>
+    docker run -d --restart=always -v ~/jenkins_slave_data:/home/jenkins-slave/workspace jenkins-swarm-slave -master http://${JENKINS_MASTER_ADDRESS}:8080 -executors <NUMBER_OF_EXECUTORS>
