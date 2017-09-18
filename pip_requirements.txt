@@ -1,0 +1,13 @@
+boto
+boto3
+jinja2
+requests
+pywinrm
+sshtunnel
+awscli
+virtualenv
+Fabric
+docker-py
+ConfigArgParse
+configparser
+sshtunnel
