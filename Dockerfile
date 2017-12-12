@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER Julian Nonino <noninojulian@outlook.com>
+LABEL maintainer="Julian Nonino <noninojulian@outlook.com>"
 
 # Update the system
 RUN apt-get update -y && \
