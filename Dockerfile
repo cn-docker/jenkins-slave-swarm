@@ -3,7 +3,7 @@ LABEL maintainer="Julian Nonino <noninojulian@outlook.com>"
 
 # Update the system
 RUN apt-get update -y && \
-    apt-get install -y git subversion mercurial wget curl tzdata unzip xz-utils build-essential libssl-dev ruby openssh ca-certificates && \
+    apt-get install -y git subversion mercurial wget curl tzdata unzip xz-utils build-essential libssl-dev ruby ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Java 8 JDK
