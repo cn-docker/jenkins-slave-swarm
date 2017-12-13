@@ -3,10 +3,10 @@ LABEL maintainer="Julian Nonino <noninojulian@outlook.com>"
 
 # Update the system
 RUN apt-get update -y && \
-    apt-get install -y git wget curl tzdata unzip xz-utils build-essential libssl-dev ruby && \
+    apt-get install -y git subversion mercurial wget curl tzdata unzip xz-utils build-essential libssl-dev ruby openssh ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
-# Install Java 8 JDK Update 141
+# Install Java 8 JDK
 RUN echo "Install Java 8 JDK Update 141" && \
     wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz && \
     tar -zxf jdk-8u151-linux-x64.tar.gz && \
@@ -15,27 +15,27 @@ RUN echo "Install Java 8 JDK Update 141" && \
 ENV JAVA_HOME /opt/java
 ENV PATH $JAVA_HOME/bin:$PATH
 
-# Install Gradle 4.1
-RUN echo "Install Gradle 4.1" && \
-    wget https://downloads.gradle.org/distributions/gradle-4.1-bin.zip && \
-    unzip gradle-4.1-bin.zip && \
-    mv gradle-4.1 /opt/gradle && \
-    rm -rf gradle-4.1-bin.zip
+# Install Gradle
+RUN echo "Install Gradle" && \
+    wget https://downloads.gradle.org/distributions/gradle-4.4-bin.zip && \
+    unzip gradle-4.4-bin.zip && \
+    mv gradle-4.4 /opt/gradle && \
+    rm -rf gradle-4.4-bin.zip
 ENV GRADLE_HOME /opt/gradle
 ENV PATH $GRADLE_HOME/bin:$PATH
 
-# Install Maven 3.5.0
-RUN echo "Install Maven 3.5.0"  && \
-    wget http://apache.dattatec.com/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz && \
-    tar -zxf apache-maven-3.5.0-bin.tar.gz && \
-    mv apache-maven-3.5.0 /opt/maven && \
-    rm -rf apache-maven-3.5.0-bin.tar.gz
+# Install Maven
+RUN echo "Install Maven"  && \
+    wget http://mirrors.dcarsat.com.ar/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz && \
+    tar -zxf apache-maven-3.5.2-bin.tar.gz && \
+    mv apache-maven-3.5.2 /opt/maven && \
+    rm -rf apache-maven-3.5.2-bin.tar.gz
 ENV MAVEN_HOME /opt/maven
 ENV PATH $MAVEN_HOME/bin:$PATH
 
-# Install Ant 1.10.1
-RUN echo "Install Ant 1.10.1"  && \
-    wget http://mirrors.dcarsat.com.ar/apache/ant/binaries/apache-ant-1.10.1-bin.tar.gz && \
+# Install Ant
+RUN echo "Install Ant"  && \
+    wget http://apache.dattatec.com//ant/binaries/apache-ant-1.10.1-bin.tar.gz && \
     tar -zxf apache-ant-1.10.1-bin.tar.gz && \
     mv apache-ant-1.10.1 /opt/ant && \
     rm -rf apache-ant-1.10.1-bin.tar.gz
@@ -64,13 +64,13 @@ RUN apt-get update && \
 COPY pip_requirements.txt /usr/local/bin/pip_requirements.txt
 RUN pip install -r /usr/local/bin/pip_requirements.txt
 
-# Install Node.js 8.5.0
-RUN wget https://nodejs.org/dist/v8.5.0/node-v8.5.0-linux-x64.tar.xz && \
-    tar -xJf node-v8.5.0-linux-x64.tar.xz -C /usr/local --strip-components=1 && \
-    rm node-v8.5.0-linux-x64.tar.xz
+# Install Node.js
+RUN wget https://nodejs.org/dist/v8.9.3/node-v8.9.3-linux-x64.tar.xz && \
+    tar -xJf node-v8.9.3-linux-x64.tar.xz -C /usr/local --strip-components=1 && \
+    rm node-v8.9.3-linux-x64.tar.xz
 
-# Install Sonar Runner 2.4
-RUN echo "Install Sonar Runner 2.4" && \
+# Install Sonar Runner
+RUN echo "Install Sonar Runner" && \
     wget http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/2.4/sonar-runner-dist-2.4.zip && \
     unzip sonar-runner-dist-2.4.zip && \
     mv sonar-runner-2.4 /opt/sonar-runner && \
