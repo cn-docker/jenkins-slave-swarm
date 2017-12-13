@@ -8,10 +8,10 @@ RUN apt-get update -y && \
 
 # Install Java 8 JDK Update 141
 RUN echo "Install Java 8 JDK Update 141" && \
-    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u141-b15/336fa29ff2bb4ef291e347e091f7f4a7/jdk-8u141-linux-x64.tar.gz && \
-    tar -zxf jdk-8u141-linux-x64.tar.gz && \
-    mv jdk1.8.0_141 /opt/java && \
-    rm -rf jdk-8u141-linux-x64.tar.gz
+    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz && \
+    tar -zxf jdk-8u151-linux-x64.tar.gz && \
+    mv jdk1.8.0_151 /opt/java && \
+    rm -rf jdk-8u151-linux-x64.tar.gz
 ENV JAVA_HOME /opt/java
 ENV PATH $JAVA_HOME/bin:$PATH
 
