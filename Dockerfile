@@ -7,29 +7,32 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Gradle
+ENV GRADLE_VERSION 4.5.1
 RUN echo "Install Gradle" && \
-    wget https://downloads.gradle.org/distributions/gradle-4.4-bin.zip && \
-    unzip gradle-4.4-bin.zip && \
-    mv gradle-4.4 /opt/gradle && \
-    rm -rf gradle-4.4-bin.zip
+    wget https://downloads.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip && \
+    unzip gradle-$GRADLE_VERSION-bin.zip && \
+    mv gradle-$GRADLE_VERSION /opt/gradle && \
+    rm -rf gradle-$GRADLE_VERSION-bin.zip
 ENV GRADLE_HOME /opt/gradle
 ENV PATH $GRADLE_HOME/bin:$PATH
 
 # Install Maven
+ENV MAVEN_VERSION 3.5.2
 RUN echo "Install Maven"  && \
-    wget http://mirrors.dcarsat.com.ar/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz && \
-    tar -zxf apache-maven-3.5.2-bin.tar.gz && \
-    mv apache-maven-3.5.2 /opt/maven && \
-    rm -rf apache-maven-3.5.2-bin.tar.gz
+    wget http://mirrors.dcarsat.com.ar/apache/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz && \
+    tar -zxf apache-maven-$MAVEN_VERSION-bin.tar.gz && \
+    mv apache-maven-$MAVEN_VERSION /opt/maven && \
+    rm -rf apache-maven-$MAVEN_VERSION-bin.tar.gz
 ENV MAVEN_HOME /opt/maven
 ENV PATH $MAVEN_HOME/bin:$PATH
 
 # Install Ant
+ENV ANT_VERSION 1.10.2
 RUN echo "Install Ant"  && \
-    wget http://apache.dattatec.com//ant/binaries/apache-ant-1.10.1-bin.tar.gz && \
-    tar -zxf apache-ant-1.10.1-bin.tar.gz && \
-    mv apache-ant-1.10.1 /opt/ant && \
-    rm -rf apache-ant-1.10.1-bin.tar.gz
+    wget https://www.apache.org/dist/ant/binaries/apache-ant-$ANT_VERSION-bin.tar.gz && \
+    tar -zxf apache-ant-$ANT_VERSION-bin.tar.gz && \
+    mv apache-ant-$ANT_VERSION /opt/ant && \
+    rm -rf apache-ant-$ANT_VERSION-bin.tar.gz
 ENV ANT_HOME /opt/ant
 ENV PATH $ANT_HOME/bin:$PATH
 
@@ -56,16 +59,18 @@ COPY pip_requirements.txt /usr/local/bin/pip_requirements.txt
 RUN pip install -r /usr/local/bin/pip_requirements.txt
 
 # Install Node.js
-RUN wget https://nodejs.org/dist/v8.9.3/node-v8.9.3-linux-x64.tar.xz && \
-    tar -xJf node-v8.9.3-linux-x64.tar.xz -C /usr/local --strip-components=1 && \
-    rm node-v8.9.3-linux-x64.tar.xz
+ENV NODEJS_VERSION 8.9.3
+RUN wget https://nodejs.org/dist/v$NODEJS_VERSION/node-v$NODEJS_VERSION-linux-x64.tar.xz && \
+    tar -xJf node-v$NODEJS_VERSION-linux-x64.tar.xz -C /usr/local --strip-components=1 && \
+    rm node-v$NODEJS_VERSION-linux-x64.tar.xz
 
 # Install Sonar Runner
+ENV SONAR_RUNNER_VERSION 2.4
 RUN echo "Install Sonar Runner" && \
-    wget http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/2.4/sonar-runner-dist-2.4.zip && \
-    unzip sonar-runner-dist-2.4.zip && \
-    mv sonar-runner-2.4 /opt/sonar-runner && \
-    rm -rf sonar-runner-dist-2.4.zip && \
+    wget http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/$SONAR_RUNNER_VERSION/sonar-runner-dist-$SONAR_RUNNER_VERSION.zip && \
+    unzip sonar-runner-dist-$SONAR_RUNNER_VERSION.zip && \
+    mv sonar-runner-$SONAR_RUNNER_VERSION /opt/sonar-runner && \
+    rm -rf sonar-runner-dist-$SONAR_RUNNER_VERSION.zip && \
     rm -rf /opt/sonar-runner/conf/sonar-runner.properties
 ENV SONAR_RUNNER_HOME /opt/sonar-runner
 ENV PATH $SONAR_RUNNER_HOME/bin:$PATH
