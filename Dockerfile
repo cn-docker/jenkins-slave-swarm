@@ -1,19 +1,10 @@
-FROM ubuntu:xenial
+FROM openjdk:8-jdk
 LABEL maintainer="Julian Nonino <noninojulian@outlook.com>"
 
 # Update the system
 RUN apt-get update -y && \
     apt-get install -y git subversion mercurial wget curl tzdata unzip xz-utils build-essential libssl-dev ruby ca-certificates && \
     rm -rf /var/lib/apt/lists/*
-
-# Install Java 8 JDK
-RUN echo "Install Java 8 JDK Update 141" && \
-    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz && \
-    tar -zxf jdk-8u151-linux-x64.tar.gz && \
-    mv jdk1.8.0_151 /opt/java && \
-    rm -rf jdk-8u151-linux-x64.tar.gz
-ENV JAVA_HOME /opt/java
-ENV PATH $JAVA_HOME/bin:$PATH
 
 # Install Gradle
 RUN echo "Install Gradle" && \
