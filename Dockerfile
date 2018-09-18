@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk
-LABEL maintainer="Julian Nonino <noninojulian@outlook.com>"
+LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 
 # Update the system
 RUN apt-get update -y && \
