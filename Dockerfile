@@ -29,22 +29,10 @@ ENV PATH $MAVEN_HOME/bin:$PATH
 # Install Python
 ENV PYTHON_VERSION 2.7.14
 ENV PYTHON_PIP_VERSION 9.0.1
-RUN apt-get update && \
-    apt-get install -y libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev zlib1g-dev && \
-    wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" && \
-    mkdir -p /usr/src/python && \
-	tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz && \
-	rm python.tar.xz && \
-    cd /usr/src/python && \
-    ./configure --enable-shared --enable-unicode=ucs4 && \
-    make && \
-    make install && \
-    ldconfig && \
-    wget -O /tmp/get-pip.py 'https://bootstrap.pypa.io/get-pip.py' && \
-    python2 /tmp/get-pip.py "pip==$PYTHON_PIP_VERSION" && \
-    rm /tmp/get-pip.py && \
-    pip install --no-cache-dir --upgrade --force-reinstall "pip==$PYTHON_PIP_VERSION" && \
-    rm -rf /usr/src/python ~/.cache
+RUN apt-get -y update && \
+    apt-get -y upgrade && \
+    apt-get install -y python2.7 python-pip && \
+    apt-get install -y python3 python3-pip
 COPY pip_requirements.txt /usr/local/bin/pip_requirements.txt
 RUN pip install -r /usr/local/bin/pip_requirements.txt
 
