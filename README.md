@@ -1,12 +1,15 @@
 # Jenkins Slave #
 
 Jenkins Slaves are build from an Ubuntu Xenial base and have this tools by default:  
-- Java JDK 8 update 141  
-- Gradle 4.1  
-- Maven 3.5.0  
-- Ant 1.10.1  
+
+- Java JDK 10  
+- Gradle 4.10.2  
+- Maven 3.6.0   
 - Python 2.7.14  
 - Python PIP 8.1.2  
+- Node.js 10.13.0
+- Sonar Runner 2.4
+- Jenkins Swarm 3.9
 
 You can build the Docker Image with the following command:  
 
