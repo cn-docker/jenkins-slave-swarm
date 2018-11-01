@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk
+FROM openjdk:11-jdk
 LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 
 # Update the system
@@ -7,7 +7,7 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Gradle
-ENV GRADLE_VERSION 4.5.1
+ENV GRADLE_VERSION 4.10.2
 RUN echo "Install Gradle" && \
     wget https://downloads.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip && \
     unzip gradle-$GRADLE_VERSION-bin.zip && \
@@ -17,24 +17,14 @@ ENV GRADLE_HOME /opt/gradle
 ENV PATH $GRADLE_HOME/bin:$PATH
 
 # Install Maven
-ENV MAVEN_VERSION 3.5.2
+ENV MAVEN_VERSION 3.6.0
 RUN echo "Install Maven"  && \
-    wget http://mirrors.dcarsat.com.ar/apache/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz && \
+    wget http://apache.dattatec.com/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz && \
     tar -zxf apache-maven-$MAVEN_VERSION-bin.tar.gz && \
     mv apache-maven-$MAVEN_VERSION /opt/maven && \
     rm -rf apache-maven-$MAVEN_VERSION-bin.tar.gz
 ENV MAVEN_HOME /opt/maven
 ENV PATH $MAVEN_HOME/bin:$PATH
-
-# Install Ant
-ENV ANT_VERSION 1.10.2
-RUN echo "Install Ant"  && \
-    wget https://www.apache.org/dist/ant/binaries/apache-ant-$ANT_VERSION-bin.tar.gz && \
-    tar -zxf apache-ant-$ANT_VERSION-bin.tar.gz && \
-    mv apache-ant-$ANT_VERSION /opt/ant && \
-    rm -rf apache-ant-$ANT_VERSION-bin.tar.gz
-ENV ANT_HOME /opt/ant
-ENV PATH $ANT_HOME/bin:$PATH
 
 # Install Python
 ENV PYTHON_VERSION 2.7.14
@@ -59,7 +49,7 @@ COPY pip_requirements.txt /usr/local/bin/pip_requirements.txt
 RUN pip install -r /usr/local/bin/pip_requirements.txt
 
 # Install Node.js
-ENV NODEJS_VERSION 8.9.3
+ENV NODEJS_VERSION 10.13.0
 RUN wget https://nodejs.org/dist/v$NODEJS_VERSION/node-v$NODEJS_VERSION-linux-x64.tar.xz && \
     tar -xJf node-v$NODEJS_VERSION-linux-x64.tar.xz -C /usr/local --strip-components=1 && \
     rm node-v$NODEJS_VERSION-linux-x64.tar.xz
@@ -88,7 +78,7 @@ RUN	mkdir /home/jenkins-slave/.m2 && \
 COPY start_slave.sh /usr/local/bin/start_slave.sh
 
 # Download Jenkins Swarm and condigure
-ENV JENKINS_SWARM_VERSION 3.4
+ENV JENKINS_SWARM_VERSION 3.9
 RUN curl --create-dirs -sSLo /usr/share/jenkins/swarm-client-jar-with-dependencies.jar https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar && \
     chmod 755 /usr/share/jenkins && \
     chmod +x /usr/local/bin/start_slave.sh
