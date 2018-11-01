@@ -5,7 +5,7 @@ Jenkins Slaves are build from an Ubuntu Xenial base and have this tools by defau
 - Java JDK 10  
 - Gradle 4.10.2  
 - Maven 3.6.0   
-- Python 2
+- Python 2.7
 - Python 3
 - Node.js 10.13.0
 - Sonar Runner 2.4
