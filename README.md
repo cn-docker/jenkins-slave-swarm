@@ -1,4 +1,4 @@
-# Jenkins Slave #
+# Jenkins Slave [![Docker hub](https://img.shields.io/docker/pulls/jnonino/jenkins-slave-swarm.svg)](https://hub.docker.com/r/jnonino/jenkins-slave-swarm/)
 
 Jenkins Slaves are build from an Ubuntu Xenial base and have this tools by default:  
 
