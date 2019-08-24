@@ -1,4 +1,14 @@
-# Jenkins Slave [![Docker hub](https://img.shields.io/docker/pulls/jnonino/jenkins-slave-swarm.svg)](https://hub.docker.com/r/jnonino/jenkins-slave-swarm/)
+# Jenkins Slave
+
+[![](https://img.shields.io/docker/pulls/jnonino/jenkins-slave-swarm.svg)](https://hub.docker.com/r/jnonino/jenkins-slave-swarm/)
+[![](hhttps://img.shields.io/docker/build/jnonino/jenkins-slave-swarm)](https://hub.docker.com/r/jnonino/jenkins-slave-swarm/)
+[![](https://img.shields.io/docker/automated/jnonino/jenkins-slave-swarm)](https://hub.docker.com/r/jnonino/jenkins-slave-swarm/)
+[![](https://img.shields.io/docker/stars/jnonino/jenkins-slave-swarm)](https://hub.docker.com/r/jnonino/jenkins-slave-swarm/)
+[![](https://img.shields.io/github/license/jnonino/jenkins-slave-swarm-docker-image)](https://github.com/jnonino/jenkins-slave-swarm-docker-image)
+[![](https://img.shields.io/github/issues/jnonino/jenkins-slave-swarm-docker-image)](https://github.com/jnonino/jenkins-slave-swarm-docker-image)
+[![](https://img.shields.io/github/issues-closed/jnonino/jenkins-slave-swarm-docker-image)](https://github.com/jnonino/jenkins-slave-swarm-docker-image)
+[![](https://img.shields.io/github/languages/code-size/jnonino/jenkins-slave-swarm-docker-image)](https://github.com/jnonino/jenkins-slave-swarm-docker-image)
+[![](https://img.shields.io/github/repo-size/jnonino/jenkins-slave-swarm-docker-image)](https://github.com/jnonino/jenkins-slave-swarm-docker-image)
 
 Jenkins Slaves are build from an Ubuntu Xenial base and have this tools by default:  
 
