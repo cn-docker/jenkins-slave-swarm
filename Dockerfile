@@ -4,7 +4,8 @@ LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 # Update the system
 RUN apt-get update -y && \
     apt-get install -y git subversion mercurial wget curl tzdata unzip xz-utils build-essential libssl-dev ruby ca-certificates && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 # Install Gradle
 ENV GRADLE_VERSION 4.10.2
@@ -32,7 +33,9 @@ ENV PYTHON_PIP_VERSION 9.0.1
 RUN apt-get -y update && \
     apt-get -y upgrade && \
     apt-get install -y python2.7 python-pip && \
-    apt-get install -y python3 python3-pip
+    apt-get install -y python3 python3-pip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 COPY pip_requirements.txt /usr/local/bin/pip_requirements.txt
 RUN pip install -r /usr/local/bin/pip_requirements.txt
 
