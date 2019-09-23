@@ -1,9 +1,9 @@
 # Jenkins Slave
 
-[![](https://img.shields.io/docker/pulls/jnonino/jenkins-slave-swarm.svg)](https://hub.docker.com/r/jnonino/jenkins-slave-swarm/)
-[![](hhttps://img.shields.io/docker/build/jnonino/jenkins-slave-swarm)](https://hub.docker.com/r/jnonino/jenkins-slave-swarm/)
-[![](https://img.shields.io/docker/automated/jnonino/jenkins-slave-swarm)](https://hub.docker.com/r/jnonino/jenkins-slave-swarm/)
-[![](https://img.shields.io/docker/stars/jnonino/jenkins-slave-swarm)](https://hub.docker.com/r/jnonino/jenkins-slave-swarm/)
+[![](https://img.shields.io/docker/pulls/cnservices/jenkins-slave-swarm.svg)](https://hub.docker.com/r/cnservices/jenkins-slave-swarm/)
+[![](hhttps://img.shields.io/docker/build/cnservices/jenkins-slave-swarm)](https://hub.docker.com/r/cnservices/jenkins-slave-swarm/)
+[![](https://img.shields.io/docker/automated/cnservices/jenkins-slave-swarm)](https://hub.docker.com/r/cnservices/jenkins-slave-swarm/)
+[![](https://img.shields.io/docker/stars/cnservices/jenkins-slave-swarm)](https://hub.docker.com/r/cnservices/jenkins-slave-swarm/)
 [![](https://img.shields.io/github/license/cn-cicd/jenkins-slave-swarm)](https://github.com/cn-cicd/jenkins-slave-swarm)
 [![](https://img.shields.io/github/issues/cn-cicd/jenkins-slave-swarm)](https://github.com/cn-cicd/jenkins-slave-swarm)
 [![](https://img.shields.io/github/issues-closed/cn-cicd/jenkins-slave-swarm)](https://github.com/cn-cicd/jenkins-slave-swarm)
