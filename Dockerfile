@@ -8,7 +8,7 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 # Install Gradle
-ENV GRADLE_VERSION 4.10.2
+ENV GRADLE_VERSION 5.6.2
 RUN echo "Install Gradle" && \
     wget https://downloads.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip && \
     unzip gradle-$GRADLE_VERSION-bin.zip && \
@@ -18,9 +18,9 @@ ENV GRADLE_HOME /opt/gradle
 ENV PATH $GRADLE_HOME/bin:$PATH
 
 # Install Maven
-ENV MAVEN_VERSION 3.6.0
+ENV MAVEN_VERSION 3.6.2
 RUN echo "Install Maven"  && \
-    wget http://apache.dattatec.com/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz && \
+    wget http://apache.mirror.anlx.net/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz && \
     tar -zxf apache-maven-$MAVEN_VERSION-bin.tar.gz && \
     mv apache-maven-$MAVEN_VERSION /opt/maven && \
     rm -rf apache-maven-$MAVEN_VERSION-bin.tar.gz
@@ -28,8 +28,8 @@ ENV MAVEN_HOME /opt/maven
 ENV PATH $MAVEN_HOME/bin:$PATH
 
 # Install Python
-ENV PYTHON_VERSION 2.7.14
-ENV PYTHON_PIP_VERSION 9.0.1
+ENV PYTHON_VERSION 2.7.16
+ENV PYTHON_PIP_VERSION 19.2.3
 RUN apt-get -y update && \
     apt-get -y upgrade && \
     apt-get install -y python2.7 python-pip && \
@@ -40,7 +40,7 @@ COPY pip_requirements.txt /usr/local/bin/pip_requirements.txt
 RUN pip install -r /usr/local/bin/pip_requirements.txt
 
 # Install Node.js
-ENV NODEJS_VERSION 10.13.0
+ENV NODEJS_VERSION 12.10.0
 RUN wget https://nodejs.org/dist/v$NODEJS_VERSION/node-v$NODEJS_VERSION-linux-x64.tar.xz && \
     tar -xJf node-v$NODEJS_VERSION-linux-x64.tar.xz -C /usr/local --strip-components=1 && \
     rm node-v$NODEJS_VERSION-linux-x64.tar.xz
