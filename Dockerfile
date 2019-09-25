@@ -1,5 +1,5 @@
 FROM openjdk:11-jdk
-LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
+LABEL maintainer="CN Services <noninojulian@gmail.com>"
 
 # Update the system
 RUN apt-get update -y && \
