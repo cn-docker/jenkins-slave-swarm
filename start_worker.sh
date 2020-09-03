@@ -15,7 +15,7 @@ if [[ "$@" != *"-executors "* ]]; then
 	PARAMS="$PARAMS -executors 1"
 fi
 
-# Slave Label
-PARAMS="$PARAMS -labels ubuntu-slave"
+# Worker Label
+PARAMS="$PARAMS -labels ubuntu-worker"
 
 exec java $JAVA_OPTS -jar /usr/share/jenkins/swarm-client-jar-with-dependencies.jar -fsroot $HOME $PARAMS "$@"
