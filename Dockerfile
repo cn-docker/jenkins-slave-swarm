@@ -75,7 +75,7 @@ COPY start_worker.sh /usr/local/bin/start_worker.sh
 
 # Download Jenkins Swarm and condigure
 ENV JENKINS_SWARM_VERSION 3.9
-RUN curl --create-dirs -sSLo /usr/share/jenkins/swarm-client-jar-with-dependencies.jar https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar && \
+RUN curl --create-dirs -sSLo /usr/share/jenkins/swarm-client-jar-with-dependencies.jar https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION.jar && \
     chmod 755 /usr/share/jenkins && \
     chmod +x /usr/local/bin/start_worker.sh
 
