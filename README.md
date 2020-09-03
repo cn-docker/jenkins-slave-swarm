@@ -1,14 +1,14 @@
 # Jenkins Worker
 
-[![](https://img.shields.io/docker/pulls/cnservices/jenkins-slave-swarm.svg)](https://hub.docker.com/r/cnservices/jenkins-slave-swarm/)
-[![](hhttps://img.shields.io/docker/build/cnservices/jenkins-slave-swarm)](https://hub.docker.com/r/cnservices/jenkins-slave-swarm/)
-[![](https://img.shields.io/docker/automated/cnservices/jenkins-slave-swarm)](https://hub.docker.com/r/cnservices/jenkins-slave-swarm/)
-[![](https://img.shields.io/docker/stars/cnservices/jenkins-slave-swarm)](https://hub.docker.com/r/cnservices/jenkins-slave-swarm/)
-[![](https://img.shields.io/github/license/cn-docker/jenkins-slave-swarm)](https://github.com/cn-docker/jenkins-slave-swarm)
-[![](https://img.shields.io/github/issues/cn-docker/jenkins-slave-swarm)](https://github.com/cn-docker/jenkins-slave-swarm)
-[![](https://img.shields.io/github/issues-closed/cn-docker/jenkins-slave-swarm)](https://github.com/cn-docker/jenkins-slave-swarm)
-[![](https://img.shields.io/github/languages/code-size/cn-docker/jenkins-slave-swarm)](https://github.com/cn-docker/jenkins-slave-swarm)
-[![](https://img.shields.io/github/repo-size/cn-docker/jenkins-slave-swarm)](https://github.com/cn-docker/jenkins-slave-swarm)
+[![](https://img.shields.io/docker/pulls/cnservices/jenkins-worker-swarm.svg)](https://hub.docker.com/r/cnservices/jenkins-worker-swarm/)
+[![](hhttps://img.shields.io/docker/build/cnservices/jenkins-worker-swarm)](https://hub.docker.com/r/cnservices/jenkins-worker-swarm/)
+[![](https://img.shields.io/docker/automated/cnservices/jenkins-worker-swarm)](https://hub.docker.com/r/cnservices/jenkins-worker-swarm/)
+[![](https://img.shields.io/docker/stars/cnservices/jenkins-worker-swarm)](https://hub.docker.com/r/cnservices/jenkins-worker-swarm/)
+[![](https://img.shields.io/github/license/cn-docker/jenkins-worker-swarm)](https://github.com/cn-docker/jenkins-worker-swarm)
+[![](https://img.shields.io/github/issues/cn-docker/jenkins-worker-swarm)](https://github.com/cn-docker/jenkins-worker-swarm)
+[![](https://img.shields.io/github/issues-closed/cn-docker/jenkins-worker-swarm)](https://github.com/cn-docker/jenkins-worker-swarm)
+[![](https://img.shields.io/github/languages/code-size/cn-docker/jenkins-worker-swarm)](https://github.com/cn-docker/jenkins-worker-swarm)
+[![](https://img.shields.io/github/repo-size/cn-docker/jenkins-worker-swarm)](https://github.com/cn-docker/jenkins-worker-swarm)
 
 You can build the Docker Image with the following command:
 
